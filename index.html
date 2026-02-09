@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLWPPY | Streetwear Store</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{background:#0f0f0f;color:#fff}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#000;position:sticky;top:0}
+    header h1{color:#00ffcc;letter-spacing:2px}
+    nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600}
+    nav a:hover{color:#00ffcc}
+
+    .hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(120deg,#000,#111)}
+    .hero h2{font-size:3rem;margin-bottom:15px}
+    .hero p{color:#bbb;margin-bottom:25px}
+    .hero button{padding:12px 30px;border:none;background:#00ffcc;color:#000;font-size:1rem;font-weight:bold;border-radius:25px;cursor:pointer}
+    .hero button:hover{opacity:0.8}
+
+    section{padding:60px 40px}
+    .section-title{text-align:center;margin-bottom:40px;font-size:2rem}
+
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+    .card{background:#161616;border-radius:15px;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    .card img{width:100%;border-radius:12px;margin-bottom:15px}
+    .card h3{margin-bottom:8px}
+    .card p{color:#aaa;margin-bottom:12px}
+    .price{color:#00ffcc;font-weight:bold;font-size:1.1rem}
+
+    .contact{text-align:center}
+    .contact p{color:#bbb;margin-bottom:10px}
+
+    footer{text-align:center;padding:20px;background:#000;color:#777}
+
+    @media(max-width:600px){
+      .hero h2{font-size:2.2rem}
+      header{flex-direction:column}
+      nav{margin-top:10px}
+    }
+  </style>
+</head>
+
+<script>
+function orderNow(product, price){
+  const phone = "97798XXXXXXXX"; // your WhatsApp number
+  const msg = `Hello, I want to order:\n\nProduct: ${product}\nPrice: Rs. ${price}`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
+}
+</script>
+
+
+<body>
+
+<header>
+  <h1>SLWPPY</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Streetwear That Speaks</h2>
+  <p>Premium hoodies • T‑shirts • Urban fashion</p>
+  <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+</section>
+
+<section id="products">
+  <h2 class="section-title">Our Collection</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/400x400" alt="Hoodie" />
+      <h3>Classic Hoodie</h3>
+      <p>Soft cotton, street fit</p>
+      <div class="price">Rs. 2,499</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x400" alt="T-shirt" />
+      <h3>Oversized Tee</h3>
+      <p>Minimal & bold</p>
+      <div class="price">Rs. 1,499</div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x400" alt="Cap" />
+      <h3>Urban Cap</h3>
+      <p>Everyday style</p>
+      <div class="price">Rs. 999</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About SLWPPY</h2>
+  <p style="max-width:700px;margin:auto;color:#bbb;text-align:center">
+    SLWPPY is a Nepal-based streetwear brand focused on bold,
+    minimal and premium urban fashion. Designed for comfort,
+    built for attitude.
+  </p>
+</section>
+
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p>📍 Nepal</p>
+  <p>📧 slwppystore@gmail.com</p>
+  <p>📱 Instagram: @slwppy_boy.01</p>
+</section>
+
+<footer>
+  © 2026 SLWPPY. All rights reserved.
+</footer>
+
+</body>
+</html>
